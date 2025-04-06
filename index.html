@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>THR Gratis</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 250px;
+      height: 250px;
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h1>Scan QR untuk dapat THR!</h1>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://google.com&size=250x250" alt="QR THR">
+  <p>(Sentuh layar untuk klaim THR)</p>
+
+  <audio id="prankSound" src="Prank sound desah halal.mp3" preload="auto"></audio>
+
+  <script>
+    const sound = document.getElementById('prankSound');
+
+    document.body.addEventListener('click', () => {
+      sound.currentTime = 0;
+      sound.play().catch(e => {
+        console.log("Gagal memutar audio:", e);
+      });
+    });
+  </script>
+</body>
+</html>
